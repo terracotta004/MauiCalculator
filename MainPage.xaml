@@ -1,4 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCalculator.MainPage">
+    <VerticalStackLayout Padding="20" Spacing="10">
+
+        <!-- Display for Calculator -->
+        <Entry x:Name="ResultEntry" FontSize="32" HorizontalOptions="FillAndExpand" IsReadOnly="True" />
+
+        <!-- Row for Function Buttons -->
+        <HorizontalStackLayout Spacing="10">
+            <Button Text="Sin" Clicked="OnFunctionClicked" />
+            <Button x:Name="DegreeToggleButton" Text="Rad" Clicked="OnToggleDegreesClicked" />
+        </HorizontalStackLayout>
+
+        <!-- Row for Numbers and Operators -->
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+              ColumnDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="10">
+
+            <!-- Number Buttons -->
+            <Button Grid.Row="1" Grid.Column="0" Text="7" Clicked="OnDigitClicked"/>
+            <Button Grid.Row="1" Grid.Column="1" Text="8" Clicked="OnDigitClicked"/>
+            <Button Grid.Row="1" Grid.Column="2" Text="9" Clicked="OnDigitClicked"/>
+            <Button Grid.Row="1" Grid.Column="3" Text="/" Clicked="OnOperatorClicked"/>
+
+            <Button Grid.Row="2" Grid.Column="0" Text="4" Clicked="OnDigitClicked"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="5" Clicked="OnDigitClicked"/>
+            <Button Grid.Row="2" Grid.Column="2" Text="6" Clicked="OnDigitClicked"/>
+            <Button Grid.Row="2" Grid.Column="3" Text="*" Clicked="OnOperatorClicked"/>
+
+            <Button Grid.Row="3" Grid.Column="0" Text="1" Clicked="OnDigitClicked"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="2" Clicked="OnDigitClicked"/>
+            <Button Grid.Row="3" Grid.Column="2" Text="3" Clicked="OnDigitClicked"/>
+            <Button Grid.Row="3" Grid.Column="3" Text="-" Clicked="OnOperatorClicked"/>
+
+            <Button Text="0" Grid.Row="4" Grid.Column="0" Clicked="OnDigitClicked"/>
+            <Button Text="C" Grid.Row="4" Grid.Column="1" Clicked="OnClearClicked"/>
+            <Button Text="=" Grid.Row="4" Grid.Column="2" Clicked="OnCalculateClicked"/>
+            <Button Text="^" Grid.Row="0" Grid.Column="3" Clicked="OnOperatorClicked"/>
+            <Button Text="+" Grid.Row="4" Grid.Column="3" Clicked="OnOperatorClicked"/>
+            <Button Text="π" Grid.Row="0" Grid.Column="0" Clicked="OnPiClicked" />
+
+            <!-- Additional Operators -->
+            <!--<Button Grid.Row="5" Grid.Column="0" Text="^" Clicked="OnOperatorClicked"/>
+            <Button Grid.Row="5" Grid.Column="1" Text="C" Clicked="OnClearClicked"/>-->
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>
+
+
+<!--<?xml version="1.0" encoding="utf-8" ?>
     <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiCalculator.MainPage">
@@ -24,10 +75,12 @@
             <Button Text="0" Grid.Row="4" Grid.Column="0" Clicked="OnDigitClicked"/>
             <Button Text="C" Grid.Row="4" Grid.Column="1" Clicked="OnClearClicked"/>
             <Button Text="=" Grid.Row="4" Grid.Column="2" Clicked="OnCalculateClicked"/>
+            <Button Text="^" Grid.Row="0" Grid.Column="3" Clicked="OnOperatorClicked"/>
             <Button Text="+" Grid.Row="4" Grid.Column="3" Clicked="OnOperatorClicked"/>
+
         </Grid>
     </VerticalStackLayout>
-</ContentPage>
+</ContentPage>-->
 
 
 <!--<?xml version="1.0" encoding="utf-8" ?>
