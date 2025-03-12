@@ -70,6 +70,12 @@ namespace MauiCalculator
 
                 if (function == "sin")
                 {
+                    if (string.IsNullOrEmpty(_currentInput) && _expression.Count > 0)
+                    {
+                        // If _currentInput is empty, use the last evaluated result
+                        _currentInput = _expression.Last();
+                    }
+
                     if (!string.IsNullOrEmpty(_currentInput))
                     {
                         double value = double.Parse(_currentInput);
@@ -83,11 +89,13 @@ namespace MauiCalculator
 
                         _expression.Clear();
                         _expression.Add(result.ToString());
+                        _currentInput = result.ToString();  // Store result for further operations
                         _isNewEntry = true;
                     }
                 }
             }
         }
+
 
         private void OnCalculateClicked(object sender, EventArgs e)
         {
