@@ -93,6 +93,58 @@ namespace MauiCalculator
                         _isNewEntry = true;
                     }
                 }
+
+                if (function == "cos")
+                {
+                    if (string.IsNullOrEmpty(_currentInput) && _expression.Count > 0)
+                    {
+                        // If _currentInput is empty, use the last evaluated result
+                        _currentInput = _expression.Last();
+                    }
+
+                    if (!string.IsNullOrEmpty(_currentInput))
+                    {
+                        double value = double.Parse(_currentInput);
+                        if (_isDegrees)
+                        {
+                            value = value * Math.PI / 180; // Convert to radians if needed
+                        }
+
+                        double result = Math.Cos(value);
+                        ResultEntry.Text = result.ToString();
+
+                        _expression.Clear();
+                        _expression.Add(result.ToString());
+                        _currentInput = result.ToString();  // Store result for further operations
+                        _isNewEntry = true;
+                    }
+                }
+
+                if (function == "tan")
+                {
+                    if (string.IsNullOrEmpty(_currentInput) && _expression.Count > 0)
+                    {
+                        // If _currentInput is empty, use the last evaluated result
+                        _currentInput = _expression.Last();
+                    }
+
+                    if (!string.IsNullOrEmpty(_currentInput))
+                    {
+                        double value = double.Parse(_currentInput);
+                        if (_isDegrees)
+                        {
+                            value = value * Math.PI / 180; // Convert to radians if needed
+                        }
+
+                        double result = Math.Tan(value);
+                        ResultEntry.Text = result.ToString();
+
+                        _expression.Clear();
+                        _expression.Add(result.ToString());
+                        _currentInput = result.ToString();  // Store result for further operations
+                        _isNewEntry = true;
+                    }
+                }
             }
         }
 

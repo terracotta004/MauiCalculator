@@ -10,6 +10,8 @@
         <!-- Row for Function Buttons -->
         <HorizontalStackLayout Spacing="10">
             <Button Text="Sin" Clicked="OnFunctionClicked" />
+            <Button Text="Cos" Clicked="OnFunctionClicked" />
+            <Button Text="Tan" Clicked="OnFunctionClicked" />
             <Button x:Name="DegreeToggleButton" Text="Rad" Clicked="OnToggleDegreesClicked" />
         </HorizontalStackLayout>
 
