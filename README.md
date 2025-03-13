@@ -2,6 +2,6 @@
 
 In-progress calculator app made with .NET Multi-platform App UI.
 
-![Alt text 1](/Screenshot_1741884405.png?raw=true "Optional Title 1")
+<img src="Screenshot_1741884405.png" alt="Alt text 1" width="200"/>
 
-![Alt text 2](/Screenshot_1741884412.png?raw=true "Optional Title 2")
+<img src="Screenshot_1741884412.png" alt="Alt text 2" width="200"/>
