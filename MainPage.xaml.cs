@@ -48,6 +48,12 @@ namespace MauiCalculator
 
         private void OnOperatorClicked(object sender, EventArgs e)
         {
+            // If user just calculated a result and presses an operator, use that result.
+            if (string.IsNullOrEmpty(_currentInput) && _expression.Count > 0)
+            {
+                _currentInput = _expression.Last();
+            }
+
             if (!string.IsNullOrEmpty(_currentInput))
             {
                 _expression.Add(_currentInput); // Store previous number
@@ -230,6 +236,25 @@ namespace MauiCalculator
                     }
                     stack.Push(Math.Sin(value));
                 }
+                else if (token == "cos")
+                {
+                    double value = stack.Pop();
+                    if (_isDegrees)
+                    {
+                        value = value * Math.PI / 180;
+                    }
+                    stack.Push(Math.Cos(value));
+                }
+                else if (token == "sin")
+                {
+                    double value = stack.Pop();
+                    if (_isDegrees)
+                    {
+                        value = value * Math.PI / 180;
+                    }
+                    stack.Push(Math.Tan(value));
+                }
+                // Factorial ???
                 else
                 {
                     double b = stack.Pop();
